@@ -1,4 +1,4 @@
-all: Main.cpp
+all:
 	g++ Main.cpp -g -O2 \
 		-o ArWallpaper \
 		-lGLEW -lX11 -lGLU -lGL \
@@ -9,9 +9,12 @@ all: Main.cpp
 
 install:
 	install -D -t /opt/ArWallpaper ArWallpaper
+	install -D -t /opt/ArWallpaper launch.sh
 	cp -r data /opt/ArWallpaper/
-	ln -sv /opt/ArWallpaper/ArWallpaper /usr/local/bin/
+	ln -s /opt/ArWallpaper/ArWallpaper /usr/local/bin/
+	cp ArWallpaper.desktop /usr/share/applications/
 
 uninstall:
 	rm -rf /opt/ArWallpaper
 	rm /usr/local/bin/ArWallpaper
+	rm /usr/share/applications/ArWallpaper.desktop
