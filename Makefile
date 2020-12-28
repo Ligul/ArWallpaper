@@ -11,6 +11,7 @@ install:
 	install -D -t /opt/ArWallpaper ArWallpaper
 	install -D -t /opt/ArWallpaper launch.sh
 	cp -r data /opt/ArWallpaper/
+	cp ArWallpaper.lua /opt/ArWallpaper/
 	ln -s /opt/ArWallpaper/ArWallpaper /usr/local/bin/
 	cp ArWallpaper.desktop /usr/share/applications/
 

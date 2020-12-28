@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+cd /opt/ArWallpaper
 pgrep devilspie2
 if [ $? -eq 0 ]
 then
@@ -12,7 +13,7 @@ then
   pkill ArWallpaper
 fi
 
-/opt/ArWallpaper/ArWallpaper | \
+ArWallpaper | \
 while IFS= read -r line
 do
   if [[ $line == *"Loaded texture:"* ]]
@@ -21,6 +22,7 @@ do
   	echo "   Window created, resizing"
   	echo "=============================="
   	sleep 0.1
-  	devilspie2 --debug -f ./
+  	devilspie2 --debug -f . && \
+  	pkill devilspie2
   fi
 done
