@@ -349,4 +349,4 @@ healthchecksdb
 MigrationBackup/
 
 
-!data/
+!data/models/*.obj
